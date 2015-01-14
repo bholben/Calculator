@@ -9,6 +9,8 @@ $cOp: #FF8700
 $cNoText: black
 $cOpText: white
 $cBorder: rgba(0, 0, 0, 0.2)
+$cDisplay: #202020
+$cBackground: #EEE
 $cDarkenHoverFactor: 5%
 
 html, body
@@ -17,7 +19,7 @@ html, body
   font-family: "Helvetica", "Open Sans", sans-serif
   font-weight: 300
   font-size: 32px
-  background-color: lightgray
+  background-color: $cBackground
   box-sizing: border-box
 
 *, *:before, *:after
@@ -25,7 +27,7 @@ html, body
 
 .container
   width: $screenWidth
-  margin: 0 auto
+  margin: 20px auto
   background-color: white
 
 .display
@@ -34,8 +36,9 @@ html, body
   text-align: right
   line-height: 160px
   padding-right: 15px
+  // font-weight: 100
   color: white
-  background-color: #202020
+  background-color: $cDisplay
 
 .buttons div
   float: left

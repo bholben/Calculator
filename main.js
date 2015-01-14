@@ -1,76 +1,82 @@
 
-var button, ac, pm, pct,
+var result, ac, pm, pct,
     add, subtract, multiply, divide, equals,
-    displayValueStr = '0',
-    value1,
-    operation;
+    valueDisplayed = '0',
+    valueStored = undefined,  // Just being explicit here.
+    operation,
+    equalFlag;
 
-result = document.getElementById('result');
-
-// zero = document.getElementById('zero');
-// one = document.getElementById('one');
-// two = document.getElementById('two');
-// three = document.getElementById('three');
-// four = document.getElementById('four');
-// five = document.getElementById('five');
-// six = document.getElementById('six');
-// seven = document.getElementById('seven');
-// eight = document.getElementById('eight');
-// nine = document.getElementById('nine');
-// decimal = document.getElementById('decimal');
-
-ac = document.getElementById('ac');
-pm = document.getElementById('pm');
-pct = document.getElementById('pct');
 add = document.getElementById('add');
 subtract = document.getElementById('subtract');
 multiply = document.getElementById('multiply');
 divide = document.getElementById('divide');
+
 equals = document.getElementById('equals');
 
-// Helper function - determine if value is a number.
-function isNumber(val) {
-  return !isNaN(parseFloat(val))
-}
+ac = document.getElementById('ac');  // All Clear
+pm = document.getElementById('pm');  // Plus/Minus
+pct = document.getElementById('pct');  // Percent
 
-function solve(operation, val1, val2) {
+result = document.getElementById('result');  // Displayed Result
+
+
+// Helper function - determine if value is a number.
+isNumber = function (val) {
+  return !isNaN(parseFloat(val))
+};
+
+// Do the math.
+solve = function (operation, val1, val2) {
   if (operation === 'add') {
-    return val1 + Number(val2);
+    return Number(val1) + Number(val2);
     console.log('Solve add')
   }
   else if (operation === 'subtract') {
-    return val1 - Number(val2);
+    return Number(val1) - Number(val2);
     console.log('Solve subtract')
   }
   else if (operation === 'multiply') {
-    return val1 * Number(val2);
+    return Number(val1) * Number(val2);
     console.log('Solve multiply')
   }
   else if (operation === 'divide') {
-    return val1 / Number(val2);
+    return Number(val1) / Number(val2);
     console.log('Solve divide')
   }
-}
-
-function reset() {
-  value1 = undefined;
-  displayValueStr = '0';
-  result.textContent = displayValueStr;
 };
 
-function storeFirstValue() {
-  value1 = Number(displayValueStr);
-  displayValueStr = '0';
-}
+customReset = function (firstVal) {
+  valueStored = firstVal;
+  valueDisplayed = '0';
+  result.textContent = valueDisplayed;
+};
+
+reset = function () {
+  valueStored = undefined;
+  valueDisplayed = '0';
+  result.textContent = valueDisplayed;
+};
+
+storeFirstValue = function () {
+  valueStored = valueDisplayed;
+  valueDisplayed = '0';
+};
+
+
+// CLICK EVENT HANDLERS ////////////////////////////////////////////////
 
 // Handle number click events.
 document.onclick = function (e) {
   inputStr = e.target.textContent;
   if (isNumber(inputStr)) {
-    if (displayValueStr === '0') { displayValueStr = ''; };
-    displayValueStr = displayValueStr + inputStr;
-    result.textContent = displayValueStr;
-    console.log(displayValueStr);
+    // Clear if previous calculation was run.
+    if (equalFlag) { reset(); };
+
+    // Get rid of the leading zero before string concatenation.
+    if (valueDisplayed === '0') { valueDisplayed = ''; };
+
+    valueDisplayed = valueDisplayed + inputStr;
+    result.textContent = valueDisplayed;
   }
 };
 
@@ -98,7 +104,7 @@ divide.onclick = function () {
 ac.onclick = function () { reset(); };
 
 equals.onclick = function () {
-  result.textContent = solve(operation, value1, displayValueStr);
-  // reset();
+  result.textContent = solve(operation, valueStored, valueDisplayed);
+  equalFlag = true;
 };
 

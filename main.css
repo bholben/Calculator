@@ -1,0 +1,62 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  background-color: lightgray;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.container {
+  width: 320px;
+  margin: 0 auto;
+  background-color: white; }
+
+.display {
+  height: 130px;
+  font-size: 72px;
+  text-align: right;
+  line-height: 160px;
+  padding-right: 15px;
+  color: white;
+  background-color: #202020; }
+
+.buttons div {
+  float: left;
+  width: 80px;
+  height: 70px;
+  text-align: center;
+  padding-top: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+  .buttons div:hover {
+    cursor: pointer; }
+
+.buttons .aux {
+  font-size: 24px;
+  padding-top: 18px; }
+
+.buttons .no0 {
+  width: 160px; }
+
+.aux {
+  color: black;
+  background-color: #C6C7C9; }
+  .aux:hover {
+    background-color: #b9babd; }
+
+.no {
+  color: black;
+  background-color: #D3D4D7; }
+  .no:hover {
+    background-color: #c6c7cb; }
+
+.op {
+  color: white;
+  background-color: #FF8700; }
+  .op:hover {
+    background-color: #e67a00; }
+
+/*# sourceMappingURL=main.css.map */

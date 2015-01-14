@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title Calculator
+  link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300")
+  link(rel="stylesheet" href="main.css")
+body
+  div.container
+    div.display#result 0
+    div.buttons.row1
+      div.button.aux#ac AC
+      div.button.aux#pm +/-
+      div.button.aux#pct %
+      div.button.op#divide &divide;
+    div.buttons.row2
+      div.button.no#seven 7
+      div.button.no#eight 8
+      div.button.no#nine 9
+      div.button.op#multiply &times;
+    div.buttons.row3
+      div.button.no#four 4
+      div.button.no#five 5
+      div.button.no#six 6
+      div.button.op#subtract &minus;
+    div.buttons.row4
+      div.button.no#one 1
+      div.button.no#two 2
+      div.button.no#three 3
+      div.button.op#add &plus;
+    div.buttons.row5
+      div.button.no0#zero 0
+      div.button.no#decimal .
+      div.button.op#equals &equals;
+  script(src="main.js")
+
+

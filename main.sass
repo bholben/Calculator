@@ -1,0 +1,78 @@
+
+$screenWidth: 320px
+$screenHeight: 480px
+$rowHeight: 70px
+
+$cAux: #C6C7C9
+$cNo: #D3D4D7
+$cOp: #FF8700
+$cNoText: black
+$cOpText: white
+$cBorder: rgba(0, 0, 0, 0.2)
+$cDarkenHoverFactor: 5%
+
+html, body
+  margin: 0
+  padding: 0
+  font-family: "Helvetica", "Open Sans", sans-serif
+  font-weight: 300
+  font-size: 32px
+  background-color: lightgray
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+
+.container
+  width: $screenWidth
+  margin: 0 auto
+  background-color: white
+
+.display
+  height: $screenHeight - 5 * $rowHeight
+  font-size: 72px
+  text-align: right
+  line-height: 160px
+  padding-right: 15px
+  color: white
+  background-color: #202020
+
+.buttons div
+  float: left
+  width: $screenWidth / 4
+  height: $rowHeight
+  text-align: center
+  padding-top: 12px
+  border: 1px solid $cBorder
+
+  &:hover
+    cursor: pointer
+
+.buttons .aux
+  font-size: 24px
+  padding-top: 18px
+
+.buttons .no0
+  width: $screenWidth / 2
+
+.aux
+  color: $cNoText
+  background-color: $cAux
+
+  &:hover
+    background-color: darken($cAux, $cDarkenHoverFactor)
+
+.no
+  color: $cNoText
+  background-color: $cNo
+
+  &:hover
+    background-color: darken($cNo, $cDarkenHoverFactor)
+
+.op
+  color: $cOpText
+  background-color: $cOp
+
+  &:hover
+    background-color: darken($cOp, $cDarkenHoverFactor)
+

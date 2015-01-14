@@ -1,7 +1,4 @@
-# 01/14/15
-
-___This homework is due by 8am, on 01/15/15___
-
+Deliverable:  [http://bholben.github.io/Calculator/](http://bholben.github.io/Calculator/)
 
 ## Homework
 

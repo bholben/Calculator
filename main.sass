@@ -1,8 +1,10 @@
 
+// Overall size
 $screenWidth: 320px
 $screenHeight: 480px
 $rowHeight: 70px
 
+// Colors
 $cAux: #C6C7C9
 $cNo: #D3D4D7
 $cOp: #FF8700
@@ -25,38 +27,43 @@ html, body
 *, *:before, *:after
   box-sizing: inherit
 
-.container
+.calculator
   width: $screenWidth
   margin: 20px auto
+  overflow: hidden
   background-color: white
 
 .display
   height: $screenHeight - 5 * $rowHeight
-  font-size: 72px
+  font-size: 80px
   text-align: right
   line-height: 160px
   padding-right: 15px
-  // font-weight: 100
   color: white
   background-color: $cDisplay
 
-.buttons div
-  float: left
-  width: $screenWidth / 4
-  height: $rowHeight
-  text-align: center
-  padding-top: 12px
-  border: 1px solid $cBorder
+.buttons
+  div
+    float: left
+    width: $screenWidth / 4
+    height: $rowHeight
+    text-align: center
+    padding-top: 12px
+    border: 1px solid $cBorder
+
+  .aux
+    font-size: 24px
+    padding-top: 18px
+
+  .no0
+    width: $screenWidth / 2
+
+  .pm
+    font-size: 32px
+    padding-top: 11px
 
   &:hover
     cursor: pointer
-
-.buttons .aux
-  font-size: 24px
-  padding-top: 18px
-
-.buttons .no0
-  width: $screenWidth / 2
 
 .aux
   color: $cNoText

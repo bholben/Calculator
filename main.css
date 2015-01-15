@@ -10,14 +10,15 @@ html, body {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-.container {
+.calculator {
   width: 320px;
   margin: 20px auto;
+  overflow: hidden;
   background-color: white; }
 
 .display {
   height: 130px;
-  font-size: 72px;
+  font-size: 80px;
   text-align: right;
   line-height: 160px;
   padding-right: 15px;
@@ -31,15 +32,16 @@ html, body {
   text-align: center;
   padding-top: 12px;
   border: 1px solid rgba(0, 0, 0, 0.2); }
-  .buttons div:hover {
-    cursor: pointer; }
-
 .buttons .aux {
   font-size: 24px;
   padding-top: 18px; }
-
 .buttons .no0 {
   width: 160px; }
+.buttons .pm {
+  font-size: 32px;
+  padding-top: 11px; }
+.buttons:hover {
+  cursor: pointer; }
 
 .aux {
   color: black;

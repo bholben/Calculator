@@ -5,6 +5,8 @@
 //  - Fix up JS number approximation (binary issue) with rounding.
 //  - Add commas.
 //  - Round irrational results to 9 digits.
+//  - Do some testing on +/-.
+//  - Use a tiny round div for the decimal point.
 
 var add, subtract, multiply, divide, equals,
     decimal,
@@ -66,9 +68,7 @@ reset = function (initialVal) {
 // CLICK EVENT HANDLERS ////////////////////////////////////////////////
 
 // Turn on decimal flag if decimal is clicked.
-decimal.onclick = function () {
-  decimalClick = true;
-};
+decimal.onclick = function () { decimalClick = true; };
 
 // Number/decimal click handler.
 document.onclick = function (e) {

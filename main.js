@@ -7,6 +7,7 @@
 //  - Round irrational results to 9 digits.
 //  - Do some testing on +/-.
 //  - Use a tiny round div for the decimal point.
+//  - Wrap in an IIFE.
 
 var add, subtract, multiply, divide, equals,
     decimal,
@@ -36,6 +37,15 @@ isNumber = function (val) {
   return !isNaN(parseFloat(val))
 };
 
+// Round irrational number to 9 significant figures.
+round = function (num) {
+  numStr = String(num);
+  console.log(numStr);
+  var x = numStr.substring(0, 10);
+  console.log(x);
+  return x;
+};
+
 // Do the math.
 solve = function (operation, val1, val2) {
   if (operation === 'add') {
@@ -48,7 +58,7 @@ solve = function (operation, val1, val2) {
     return Number(val1) * Number(val2);
   }
   else if (operation === 'divide') {
-    return Number(val1) / Number(val2);
+    return round(Number(val1) / Number(val2));
   }
 };
 
